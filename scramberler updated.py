@@ -1,3 +1,4 @@
+
 from tkinter import *
 from tkinter import messagebox
 import random
@@ -20,7 +21,7 @@ print(scrambled_word)
 num = random.randrange(0,len(words))
 
 def reset():
-  
+  global num
   num = random.randrange(0,len(words))
   scrambledword.config(text=scrambled_words[num])
   entry_box.delete(0,END)
@@ -38,7 +39,7 @@ def check():
         
       score+=1
       messagebox.showinfo(message="Congratulations, correct answer!")
-      
+
     else:
       messagebox.showerror(message="Sorry, incorrect answer.")
     scorecounter = "Score: "+str(score)+"/"+str(qno)
